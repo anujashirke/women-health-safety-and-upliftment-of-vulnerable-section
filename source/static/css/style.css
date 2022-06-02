@@ -542,133 +542,30 @@
 }
 /** end weyoga **/
 /** your life yoga **/
- .yourlifeyoga {
+ .stroke {
     background:#fff;
      box-shadow: #ddd 0px 0px 25px 0px;
      padding:60px 10px;
      text-align: center;
 }
- .yourlifeyoga .yogatitle h2 {
+ .stroke .stroketitle h2 {
      font-size: 55px;
      line-height: 73px;
      font-weight: bold;
      color: #58c62c;
 }
- .yourlifeyoga .yoga_img figure {
+ .stroke .stroke_img figure {
     margin: 0px;
 }
- .yourlifeyoga .yoga_img figure img {
+ .stroke .stroke_img figure img {
     padding:35px 0px;
 }
- .yourlifeyoga .yoga_img p {
+ .stroke .stroke_img p {
      color: #58c62c;
      font-size: 17px;
 }
 /** end your life yoga **/
-/** our pricing **/
- .pricing {
-     margin-top: 90px;
-     background: #fff;
-}
- .pricing_packages_bg {
-     background: #ff8c00;
-     padding: 80px 0px;
-}
- .pricing .pricing_box {
-     text-align: center;
-    padding-bottom:10px;
-}
- .pricing .pricing_box h3 {
-     font-size: 27px;
-     line-height: 24px;
-     color: #fff;
-     font-weight: 500;
-     text-transform: uppercase;
-     background: #020500;
-     padding: 35px 0px;
-}
- .pricing .pricing_box span {
-     color: #58c62c;
-     font-size: 90px;
-     font-weight: bold;
-     padding-top: 85px;
-     line-height: 90px;
-     display: inline-block;
-}
- .pricing .pricing_box p {
-     color: #000;
-     font-size: 17px;
-     line-height: 28px;
-     font-weight: 400;
-     padding: 20px 10px 85px 10px;
-}
- .pricing_box_cross {
-    text-align: center;
-     box-shadow: #dddd 0px 0px 18px 6px;
-     padding-bottom:10px;
-}
- .pricing_box_cross::after {
-     content:"";
-     background: url(../images/img.png);
-     position: absolute;
-     width: 92%;
-     height: 70px;
-     left: 15px;
-     bottom: -8px;
-     background-repeat: no-repeat;
-     background-size: 100% 100% 
-}
- .pricing .pricing_box_cross h3 {
-     font-size: 27px;
-     text-align: center;
-     line-height: 24px;
-     color: #fff;
-     font-weight: 500;
-     text-transform: uppercase;
-     background: #58c62c;
-     padding: 35px 0px;
-}
- .pricing .pricing_box_cross span {
-     color: #58c62c;
-     font-size: 90px;
-     font-weight: bold;
-     padding-top: 60px;
-     line-height: 90px;
-     display: inline-block;
-}
- .pricing .pricing_box_cross p {
-     color: #000;
-     font-size: 17px;
-     line-height: 28px;
-     font-weight: 400;
-     padding: 20px 10px 55px 10px;
-}
- .pricing_box_cross .white_bold {
-     color: #020500;
-     font-size: 90px;
-     font-weight: 500;
-     line-height: 90px;
-}
- .SelectPlan {
-     margin: 0 auto;
-     display: block;
-     background: #fff;
-     color: #050000;
-     max-width: 202px;
-     padding: 12px 0px;
-     width: 100%;
-     font-size: 18px;
-     text-align: center;
-     text-transform: uppercase;
-     font-weight: 500;
-     border:#35a30a solid 1px;
-}
- .SelectPlan:hover {
-     color: #fff;
-     background: #000000;
-     border:#050000 solid 1px;
-}
-/** end our pricing **/
+
  .title {
      text-align: center;
      padding-bottom: 60px;
@@ -680,44 +577,7 @@
      color: #58c62c;
      padding-bottom: 20px;
 }
-/** Newsletter **/
- .Newsletter {
-    background: #58c62c;
-     padding: 70px 0px;
-     margin-top: 90px;
-}
- .Newsletter .news h2 {
-     font-size: 60px;
-     font-weight: normal;
-     line-height: 46px;
-     color: #fff;
-     padding: 0;
-     margin-bottom: 17px;
-     text-align: center;
-}
- .new_botton {
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     margin-top: 30px;
-}
- .new_botton .tetter {
-     padding: 10px 20px;
-     border-radius: inherit;
-     border: inherit;
-     width: 39%;
-}
- .submit {
-     background: #070100;
-     margin-left: -3px;
-     padding: 9px 50px;
-     color: #fff;
-}
- .submit:hover {
-     background: #ddd;
-     color: #000;
-}
-/** end Newsletter **/
+
 /** yoga online **/
  .yoga {
      padding-top: 90px;
@@ -878,7 +738,7 @@
      color: #fff;
      text-align: center;
      padding: 25px 0px;
-     font-size: 17px;
+     font-size: 19px;
 }
  .copyright a {
      color: #fff;
