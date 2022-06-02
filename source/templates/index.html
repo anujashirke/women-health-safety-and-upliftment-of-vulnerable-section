@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+
+    <style>
+        body
+        {
+            background-image:url('/static/image.jpg');
+            background-repeat: no-repeat;
+            background-size: 1300px 620px;
+            background-attachment: fixed;
+            color: aliceblue;
+        }
+
+.box 
+{
+width: 400px;
+padding: 40px;
+margin: 30px;
+padding-top: 30px;
+padding-right: 40px;
+opacity: 0.5;
+background-color: black;
+border-radius: 120px;
+color: white;
+font: 16px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p
+{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    font-size: medium;
+    font-size: large;
+    
+}
+
+label
+{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    font-size: medium;
+    font-size: large;
+    
+}
+
+input
+{
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    text-align:center;
+    align-items:flex-end;
+    margin-left: 50px;
+    font-size:medium;
+}
+
+#output
+{
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 8px;
+    width: 200px;
+    font-weight: bold;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    
+        <div class="box">
+            <center>
+        <h1> STROKE PREDICTION</h1> 
+    <form action="predict" method="POST">
+
+
+        
+        <p>Enter Age :
+            <input type="number" id="age" name="age" min="1" max = "100"  required="required" style="width: 100px;" placeholder=" e.g 1-100">
+        
+        </p>
+
+
+        <label for="hypertension" style="padding-right: 80px;">Hypertension : </label>
+        <select name="hypertension" id="hypertension">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+
+        <br><br>
+
+
+          <label for="heart-disease" style="padding-right: 70px;">Heart Diseases : </label>
+          <select name="heart_disease" id="heart-disease">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+
+        <br><br>
+
+
+        <label for="marriage" style="padding-right: 115px;">Married : </label>
+            <select name="ever_married" id="marriage">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+        <br><br>
+        
+        <label for="worktype" style="padding-right: 60px;">Work-Type : </label>
+        <select name="work_type" id="worktype">
+            <option value="none">No Selection</option>
+                <option value="work_type_Private">Private</option>
+                <option value="work_type_Self_employed">Self Employed</option>
+                <option value="work_type_Govt_job">Govt Job</option>
+                <option value="work_type_children">Children</option>
+                <option value="work_type_Never_worked">Never Worked</option>
+            </select>
+
+        <br><br>
+
+
+        <label for="residency" style="padding-right: 50px;">Residency Type : </label>
+        <select name="Residence_type" id="residency">
+                <option value="1">Urban Area</option>
+                <option value="0">Rural Area</option>
+            </select>
+
+        <br>
+
+        <p>Glucose Levels :
+        <input type="number" id="glucose" name="avg_glucose_level" min="50" max="400" style="width: 100px;" placeholder=" e.g 80-300"></p>
+
+        <p>BMI :
+        <input type="number" id="bmi" name="bmi" min="16" step="0.1" style="width: 100px; margin-left:115px;" placeholder="e.g 18-45"></p>
+
+
+        <label for="smoking" style="padding-right: 50px;">Smoking Status : </label>
+        <select name="smoking_status" id="smoking">
+            <option value="none">No Selection</option>
+            <option value="smoking_status_formerly_smoked">Formerly Smokes</option>
+                <option value="smoking_status_never_smoked">Never Smokes</option>
+                <option value="smoking_status_smokes">Smokes</option>
+                <option value="smoking_status_Unknown">Unknown</option>
+            </select>
+
+        <br><br>
+
+        <input type="submit" value="SUBMIT" id="output"> 
+
+    </form>
+
+</div>
+
+
+
+
+
+</body>
+</html>
