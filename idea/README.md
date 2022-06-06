@@ -1,4 +1,3 @@
-Add your idea files to this directory. Please don't rename this directory.
 women safety matters
 ---------------------
 Woman's harassment cause physical as well as psychological harm and it discourages women from participating in many cultural and social issues. 
