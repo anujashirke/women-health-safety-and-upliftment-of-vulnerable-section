@@ -1,4 +1,8 @@
-women safety matters
+Women Safety and health
+---------------------
+Our project is concerned about women's health and safety. As a part of society, we are trying to provide a solution for their health and also highlighting how women's safety matters with the help of visualization. As a part of the solution, we are serving an application which will help to predict the chances of stroke and helplines for VAW (Violence Against Women)
+
+women safety matters 
 ---------------------
 Woman's harassment cause physical as well as psychological harm and it discourages women from participating in many cultural and social issues. 
 By doing so, it hammers gender equality and valid general woman's rights.
