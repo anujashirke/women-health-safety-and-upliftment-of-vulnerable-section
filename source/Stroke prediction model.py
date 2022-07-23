@@ -1,6 +1,3 @@
-
-
-
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -11,63 +8,17 @@ df=pd.read_csv("Strokesdataset.csv")
 
 
 
-
-
-corr=df.corr()
-
-sns.heatmap(corr,annot=True)
-
-
-df.stroke.value_counts()
-
-
-
-df.ever_married.value_counts()
-
-
-
-df.smoking_status.value_counts()
-
-
-
-df.work_type.value_counts()
-
-
-
-df.Residence_type.value_counts()
-
-
-
-mean=df.bmi.mean()
-
-
-
-df["bmi"].isnull().sum()
-
-
 df1=df.copy()
 
 
 
-df1.head()
-
-
-df1["bmi"]=df1.bmi.fillna(value=mean)
-df1.head()
-
-
 
 df1["age"]=df1.age.apply(np.ceil).astype(int)
-df1.info()
+mean=df.bmi.mean()
 
-
+df1["bmi"]=df1.bmi.fillna(value=mean)
 
 df1.dropna(axis=0,inplace=True )
-
-
-
-df1.isnull().sum()
-
 
 
 male_index=df1[df1["gender"]=="Male"].index
@@ -80,43 +31,62 @@ df1.drop(index=other_index,inplace=True)
 
 
 
-df1.gender.value_counts()
-
-
-
 df1["bmi"]=df1["bmi"].round(decimals=2)
 
 
-df1.tail()
+# df1[avg_glucose_level]<140 low
+# df1[avg_glucose_level]<199 Medium
+# df1[avg_glucose_level]>=200 High
+
+
+
+# create a list of our conditions
+conditions = [
+    (df1["avg_glucose_level"]<140),
+    (df1["avg_glucose_level"]<199),
+    (df1["avg_glucose_level"]>=200)
+    ]
+
+# create a list of the values we want to assign for each condition
+values = ['Low', 'Medium', 'High']
+
+# create a new column and use np.select to assign values to it using our lists as arguments
+df1['Sugar'] = np.select(conditions, values)
+
+# df1[bmi]<18.5 low
+# df1[bmi]>18.5 & df1[bmi]<29.9 Medium
+# df1[bmi]>30 High
+
+# create a list of our conditions
+conditions = [
+    (df1["bmi"]<18.5),
+    (df1["bmi"]>18.5) & (df1["bmi"]<29.9),
+    (df1["bmi"]>30 )
+    ]
+
+# create a list of the values we want to assign for each condition
+values = ['Low', 'Medium', 'High']
+
+# create a new column and use np.select to assign values to it using our lists as arguments
+df1['bmi'] = np.select(conditions, values)
+
 
 from sklearn.preprocessing import LabelEncoder
 
 le=LabelEncoder()
 
-
 df1["ever_married"]= df1[["ever_married"]].apply(le.fit_transform)
 df1["work_type"]= df1[["work_type"]].apply(le.fit_transform)
 df1["Residence_type"]= df1[["Residence_type"]].apply(le.fit_transform)
 df1["smoking_status"]= df1[["smoking_status"]].apply(le.fit_transform)
-df1.head()
-
-
-df["hypertension"].value_counts()
+df1["Sugar"]= df1[["Sugar"]].apply(le.fit_transform)
+df1["bmi"]= df1[["bmi"]].apply(le.fit_transform)
 
 
 
-df1["work_type"].value_counts()
+#train_test_split
 
-
-from matplotlib import pyplot as plt
-plt.subplots(figsize=(10,10))
-sns.heatmap(corr,annot=True,fmt=".3g",annot_kws={"fontsize":10})
-
-
-df1.head()
-
-
-x=df1.drop(columns=["stroke","id","gender"])
+x=df1.drop(columns=["stroke","id","gender","avg_glucose_level"])
 y=df1["stroke"]
 
 from sklearn.model_selection import train_test_split 
@@ -125,7 +95,6 @@ x_train,x_test,y_train,y_test=train_test_split(x,
                                                y,
                                                random_state=4,
                                                test_size=0.3)
-
 
 
 
@@ -154,25 +123,12 @@ x_train,x_test,y_train,y_test=train_test_split(x_sm,
                                                test_size=0.3)
 
 
-x_train.head()
-
-
-
-y_train.head()
-
-
 # ## MODEL SELECTION
 
 
 
 #sklearn models
 from sklearn.neighbors import KNeighborsClassifier
-
-
-
-get_ipython().system('pip install catboost')
-get_ipython().system('pip install xgboost')
-get_ipython().system('pip install lightgbm')
 
 
 
@@ -234,19 +190,7 @@ kn_fpr, kn_tpr, _ = roc_curve(y_test, kn_y)
 
 
 
-plt.plot(lig_fpr, lig_tpr, linestyle='--', label='Light GBM (AUROC = %.3f)' % lig_auc)
-plt.plot(cat_fpr, cat_tpr, marker='.', label='Cat Boost (AUROC = %0.3f)' % cat_auc)
-plt.plot(kn_fpr, kn_tpr, marker='.', label='K-nn (AUROC = %0.3f)' % kn_auc)
 
-# Title
-plt.title('ROC Plot')
-# Axis labels
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
-# Show legend
-plt.legend() # 
-# Show plot
-plt.show()
 
 
 # ## Test Data
@@ -255,11 +199,6 @@ plt.show()
 test_data=pd.read_csv("healthcare-dataset-stroke-data.csv")
 
 
-
-test_data.isna().sum()
-
-
-test_data.gender.value_counts()
 
 
 male_index=test_data[test_data["gender"]=="Male"].index
@@ -273,26 +212,58 @@ test_data.drop(index=male_index,inplace=True)
 test_data.drop(index=other_index,inplace=True)
 
 
-test_data.gender.value_counts()
-
-
-
-test_data.isna().sum()
-
 
 test_data.dropna(axis=0,inplace=True )
 
+# df1[avg_glucose_level]<140 low
+# df1[avg_glucose_level]<199 Medium
+# df1[avg_glucose_level]>=200 High
 
 
+
+# create a list of our conditions
+conditions = [
+    (test_data["avg_glucose_level"]<140),
+    (test_data["avg_glucose_level"]<199),
+    (test_data["avg_glucose_level"]>=200)
+    ]
+
+# create a list of the values we want to assign for each condition
+values = ['Low', 'Medium', 'High']
+
+# create a new column and use np.select to assign values to it using our lists as arguments
+test_data['Sugar'] = np.select(conditions, values)
+
+# display updated DataFrame
 test_data.head()
 
+# test_data[bmi]<18.5 low
+# test_data[bmi]>18.5 & df1[bmi]<29.9 Medium
+# test_data[bmi]>30 High
 
+# create a list of our conditions
+conditions = [
+    (test_data["bmi"]<18.5),
+    (test_data["bmi"]>18.5) & (test_data["bmi"]<29.9),
+    (test_data["bmi"]>30 )
+    ]
+
+# create a list of the values we want to assign for each condition
+values = ['Low', 'Medium', 'High']
+
+# create a new column and use np.select to assign values to it using our lists as arguments
+test_data['bmi'] = np.select(conditions, values)
+
+# display updated DataFrame
+test_data.head()
 
 test_data["ever_married"]= test_data[["ever_married"]].apply(le.fit_transform)
 test_data["work_type"]= test_data[["work_type"]].apply(le.fit_transform)
 test_data["Residence_type"]= test_data[["Residence_type"]].apply(le.fit_transform)
 test_data["smoking_status"]= test_data[["smoking_status"]].apply(le.fit_transform)
-test_data.head()
+test_data["Sugar"]= test_data[["Sugar"]].apply(le.fit_transform)
+test_data["bmi"]= test_data[["bmi"]].apply(le.fit_transform)
+
 
 
 
@@ -304,10 +275,7 @@ test_data.drop(columns="gender",inplace=True)
 
 
 
-test_data.head(1)
-
-
-Xtest=test_data.drop(columns="stroke")
+Xtest=test_data.drop(columns=["stroke","avg_glucose_level"])
 Ytest=test_data["stroke"]
 
 
@@ -325,9 +293,6 @@ print(classification_report(catboost.predict(Xtest),Ytest))
 kn_Y=Knearest.predict(Xtest)
 print(classification_report(Knearest.predict(Xtest),Ytest))
 
-
-
-test_data.stroke.value_counts()
 
 
 

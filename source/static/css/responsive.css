@@ -1,389 +1,386 @@
 /*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
- @media (min-width: 1200px) and (max-width: 1500px) {
-     .banner_main .carousel-caption h1 {
-         font-size: 64px;
-         line-height: 80px;
-         padding-bottom: 36px;
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .main-menu ul>li a {
+        padding: 20px 20px 20px;
     }
-     .right_header_info ul li {
-         font-size: 14px;
-         margin-left: 12px;
-    }
-     .slider_cont h3 {
-         font-size: 36px;
-         line-height: 45px;
-    }
-     .slider_cont p {
-         margin-top: 10px;
-         margin-bottom: 5px 
-    }
-     .black_white {
-         color: #000;
-    }
-    .main_form {padding-left: 100px;}
-    ul.mail-icon li {margin-bottom: 10px;}
-     .about_box_text {
-        padding-left: 35px;
-         padding-right: 50px;
-         padding-bottom: 50px;
-    }
-     .about_box_text .title {
-        padding-top: 50px;
-         padding-bottom: 60px;
-    }
-     .slider_section {
-         min-height: inherit;
+    .header-search {
+        padding: 15px 0px;
     }
 }
- @media (min-width: 992px) and (max-width: 1199px) {
-     .slider_section {
-         min-height: inherit;
+
+
+/*------------------------------------------------------------------- 767px x 599px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 599px) and (max-width: 767px) {
+    .logo {
+        text-align: center;
     }
-     .relative {
-        top: 64%;
+    .cart-content-right {
+        padding-bottom: 5px;
     }
-     .banner_main .carousel-caption h1 {
-        font-size: 65px;
-         line-height: 70px;
-         padding-bottom: 56px;
+    .mg {
+        margin: 0px 0px;
     }
-     .top_layer::before {
+    .menu-area-main {
+        height: 256px;
+        overflow-y: auto;
+    }
+    .megamenu>.row [class*="col-"] {
+        padding: 0px;
+    }
+    .menu-area-main .megamenu .men-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .women-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .el-cat {
+        padding: 0px 15px;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        height: 19px;
+    }
+    .category-box.women-box {
         display: none;
     }
-     .navbar-expand-md .navbar-nav .nav-link {
-        padding: 15px 37px;
+    .cart-box {
+        display: inline-block;
+        margin: 0px 30px;
     }
-     .black_white {
-         color: #000;
+    .wish-box {
+        float: none;
+        margin: 0px 30px;
+        display: inline-block;
     }
-     .pricing_box_cross::after {
-        width: 91%;
+    .menu-add {
+        display: none;
     }
-     .about_box_text .title {
-        padding-top: 30px;
+    .category-box {
+        display: none;
     }
-     .about_box_text p {
-        font-size: 15px;
-         line-height: 25px;
+    .mean-container .mean-nav ul li ol {
+        padding: 0px;
     }
-     .about_box_text {
-        padding-left: 39px;
+    .mean-container .mean-nav ul li a {
+        padding: 10px 20px;
+        width: 94.8%;
     }
-     .main_form {
-        padding-left: 30px;
+    .mean-container .mean-nav ul li li a {
+        width: 92%;
+        padding: 1em 4%;
     }
-     ul.mail-icon li img {
-        padding-right: 5px;
+    .mean-container .mean-nav ul li li li a {
+        width: 100%;
     }
-     ul.mail-icon li {
-        font-size: 13px;
-         padding-right: 8px;
-         padding-bottom: 10px;
+    .header-search {
+        padding: 15px 0px;
+    }
+    #collapseFilter.d-md-block {
+        padding: 30px 0px;
     }
 }
- @media (min-width: 768px) and (max-width: 991px) {
-     .top_layer::before {
+
+
+/*------------------------------------------------------------------- 599px x 280px ---------------------------------------------------------------------*/
+
+@media only screen and (min-width: 280px) and (max-width: 599px) {
+    .cart-content-right {
+        padding-bottom: 5px;
+    }
+    .megamenu>.row [class*="col-"] {
+        padding: 0px;
+    }
+    .menu-area-main .megamenu .men-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .women-cat {
+        padding: 0px 15px;
+    }
+    .menu-area-main .megamenu .el-cat {
+        padding: 0px 15px;
+    }
+    .mean-container .mean-nav ul li a {
+        padding: 1em 4%;
+        width: 92%;
+    }
+    .mean-container .mean-nav ul li li a {
+        width: 90%;
+        padding: 1em 5%;
+    }
+    .mean-container .sub-full.megamenu-categories ol li a {
+        padding: 5px 0px;
+        text-transform: capitalize;
+        width: 100%;
+    }
+    .megamenu .sub-full.megamenu-categories .women-box .banner-up-text a {
+        width: auto;
+        border: none;
+        float: none;
+    }
+    .menu-area-main {
+        height: 290px;
+        overflow-y: auto;
+    }
+    .mean-container .mean-nav ul li a.mean-expand {
+        top: 0;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .top_layer::before {
         display: none;
     }
-     .right_header_info ul li {
-         margin-left: 32px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-menu ul>li a {
+        padding: 7px 20px 0 20px;
     }
-     .slider_section {
-         min-height: inherit;
-         padding-top: 128px;
+    .full-slider_cont h1 {
+        font-size: 51px;
+        line-height: 61px;
     }
-     .navbar-expand-md .navbar-nav .nav-link {
-        padding: 15px 29px;
-    }
-     .banner_main .carousel-caption h1 {
-        font-size: 65px;
-         line-height: 70px;
-         padding-bottom: 56px;
-    }
-     .email {
+    .top_layer::before {
         display: none;
     }
-     .contact_nu {
-        display: none;
+    .relative {
+        position: absolute;
+        top: 44%;
+        transform: translateY(-50%);
+        bottom: 0;
+        padding: 0;
     }
-     .about_box_text {
-        padding-left: 15px;
-         padding-right: 50px;
-         padding-bottom: 48px;
+    .testimonial .contact {
+        padding: 30px 30px;
     }
-     .about_box {
-        margin-right: 0px;
+    .testimonial .contact .contactus {
+        padding: 10px 19px;
+        margin-bottom: 20px;
     }
-     .about_box_text .title {
-        padding-top: 48px;
-         padding-bottom: 60px;
+    .testimonial .contact .textarea {
+        margin-bottom: 20px;
+        padding: 11px 19px;
     }
-     .yogo_three_box h3 {
+    .testimonial .contact .send {
+        padding: 7px 50px;
+    }
+    .footer .address h3 {
         font-size: 20px;
     }
-     .yogo_three_box p {
-        font-size: 14px;
+    ul.contant_icon li {
+        padding-right: 5px;
     }
-     .pricing_box_cross::after {
-        width: 88%;
+    ul.socil_link li {
+        padding-right: 20%;
     }
-     .pricing .pricing_box p {
-        font-size: 16px;
+    ul.contant_icon li img {
+        width: 26px;
+        height: 26px;
     }
-     .pricing .pricing_box_cross p {
-        font-size: 16px;
-    }
-     .Newsletter .news h2 {
-        font-size: 53px;
-    }
-     .yoga .title h2 {
-        font-size: 53px;
-    }
-     ul.mail-icon li {
-         padding-bottom: 10px;
-    }
-     .main_form {
-         padding: 51px 24px;
-    }
-     .copyright p {
-         font-size: 16px;
+    .footer .newsletter .subscribe {
+        padding: 21px 0;
+        width: 145px;
     }
 }
- @media (min-width: 576px) and (max-width: 767px) {
-    
-     .navbar-dark .navbar-toggler {
-        background: #000;
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-menu ul>li a {
+        padding: 2px 1px 0 2px;
     }
-     .navbar-expand-md .navbar-nav .nav-link {
-        text-align: left;
-        padding: 15px 0;
-    }
-     .bg {
-        padding: 10px 0;
-         background-color: #5ab337;
-    }
-     .banner_main .carousel-caption h1 {
-        font-size: 41px;
-         line-height: 47px;
-         padding-bottom: 56px;
-    }
-     .banner_main .carousel-caption a {
-        max-width: 181px;
-    }
-     .top_layer::before {
-        display: none;
-    }
-     .logo {
-         text-align: center;
-         display: block;
-    }
-     .email {
-        display: none;
-    }
-     .contact_nu {
-        display: none;
-    }
-     .slider_section {
-         min-height: inherit;
-         padding-top: 137px;
-    }
-     .about_box {
-        margin-right: 0px;
-    }
-     .about_box_text {
-        padding: 33px;
-    }
-     .about_box_text .title {
-        padding-top: 0px;
-    }
-     .yogo_three_box {
-        margin-bottom: 20px;
-    }
-     .yogo_three_box figure {
-         margin: 0;
-         text-align: center;
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-    }
-     .readmore {
-        margin: 0 auto;
-    }
-     .pricing_box_cross::after {
-        width: 95%;
-    }
-     .pricing_box_cross {
-        padding-bottom: 76px;
-    }
-     .pricing .pricing_box {
-        margin-bottom: 20px;
-    }
-     .pricing_box_cross {
-        margin-bottom: 20px;
-    }
-     .yoga .title h2 {
+    .full-slider_cont h1 {
         font-size: 40px;
+        line-height: 50px;
     }
-     .yoga .yoga_box img {
-        margin-top: -50px;
-         padding-bottom: 50px !important;
-         padding: 0px 50px;
+    .relative {
+        position: absolute;
+        top: 39%;
+        transform: translateY(-50%);
+        padding: 0;
+        border: 0 aliceblue;
+        bottom: 0;
     }
-     .yourlifeyoga .yogatitle h2 {
-        font-size: 55px;
+    .banner-main .carousel-caption h1 {
+        color: #fff;
+        font-size: 59px;
+        line-height: 60px;
+        font-weight: bold;
+        
     }
-     .Newsletter .news h2 {
-        font-size: 40px;
+    .banner-main .carousel-caption p {
+        font-size: 17px;
+        padding: 9px 0px 18px 0px;
     }
-     ul.mail-icon li {
-        margin-bottom: 10px;
+    .banner-main .carousel-caption a {
+        width: 182px;
+        padding: 8px 0;
     }
-     .main_form {
-         padding-left: 15px;
+    .top_layer::before {
+        display: none;
     }
-     .padddd {
-         padding-left: 0px;
-         padding-right: 0;
+    .main_bt {
+        margin-right: 15px;
+        padding: 10px 41px 10px 41px;
     }
-     .title h2 {
-         font-size: 49px;
-         line-height: 35px;
+    .testimonial .contact {
+        padding: 20px 30px;
     }
-     .mar_bottom {
-         margin-bottom: 0px;
+    .testimonial .contact .contactus {
+        padding: 10px 19px;
+        margin-bottom: 18px;
     }
-     .black_white {
-         color: #000;
+    .testimonial .contact .textarea {
+        margin-bottom: 18px;
+        padding: 11px 19px;
     }
-     .main_form {
-         padding-left: 15px;
+    .testimonial .contact .send {
+        padding: 7px 50px;
+    }
+    ul.socil_link li {
+        padding-right: 15%;
+    }
+    .footer .newsletter .subscribe {
+        padding: 21px 0;
+        width: 113px;
     }
 }
- @media (max-width: 575px) {
-     .navbar-dark .navbar-toggler {
-        background: #000;
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .mean-container .mean-bar {
+        margin-top: 0px;
     }
-     .navbar-expand-md .navbar-nav .nav-link {
-        text-align: left;
-        padding: 15px 0;
+    .relative {
+        position: absolute;
+        top: 39%;
+        transform: translateY(-50%);
+        padding: 0;
+        bottom: 0;
     }
-     .logo {
-         text-align: center;
-         display: block;
+    .banner-main .carousel-caption h1 {
+        font-size: 45px;
+        line-height: 50px;
     }
-     .bg {
-         background-color: #5ab337;
-         padding: 10px 0;
+    .banner-main .carousel-caption p {
+        font-size: 17px;
+        padding: 7px 0px 20px 0px;
     }
-     .email {
+    .carousel-item img {
+        width: 100%;
+        height: 400px;
+    }
+    .top_layer::before {
         display: none;
     }
-     .contact_nu {
+    .mean-last {
         display: none;
     }
-     .title h2 {
-         font-size: 45px;
-         line-height: 55px;
+    .download .titlepage h2 {
+        font-size: 35px;
     }
-     .title span {
-         font-size: 15px;
+    .testimonial .contact {
+        margin-top: 30px;
     }
-     .pppp {
-         padding: 0 15px !important;
+    .address {
+        margin-bottom: 30px;
     }
-     .mar_bottom {
-         margin-bottom: 0px;
-    }
-     .black_white {
-         color: #000;
-    }
-     .banner_main .carousel-caption h1 {
-         font-size: 42px;
-         line-height: 46px;
-         padding-bottom: 51px;
-         padding-top: 14px;
-    }
-     .banner_main .carousel-caption a {
-         max-width: 172px;
-    }
-     .banner_main .carousel-item img {
-         height: 450px;
-    }
-     .top_layer::before {
-        display: none;
-    }
-     .about_box {
-        margin-right: 0px;
-    }
-     .about_box_text {
-        padding-left: 20px;
-         padding-right: 20px;
-         padding-bottom: 40px;
-    }
-     .about_box_text .title {
-        padding-top: 29px;
-         padding-bottom: 40px;
-    }
-     .about_box_text p {
-        font-size: 18px;
-         line-height: 29px;
-    }
-     .yogo_three_box {
+    ul.contant_icon {
         margin-bottom: 20px;
     }
-     .readmore {
-        margin: auto;
+}
+
+@media (max-width: 575px) {
+    .header {
+        padding-bottom: 0px;
     }
-     .yourlifeyoga .yogatitle h2 {
-        font-size: 33px;
-         line-height: 42px;
+    .logo {
+        text-align: center !important;
+        padding-bottom: 25px;
+        float: inherit;
     }
-     .pricing .pricing_box {
+    #main_slider .carousel-control-prev,
+    #main_slider .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    .relative {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        bottom: 0;
+    }
+    .banner-main .carousel-caption h1 {
+        font-size: 26px;
+        line-height: 50px;
+        margin-bottom: 19px;
+    }
+    .banner-main .carousel-caption p {
+        font-size: 17px;
+        padding: 7px 0px 20px 0px;
+        display: none;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 250px;
+    }
+    .top_layer::before {
+        display: none;
+        background-size: none;
+    }
+    .mean-container .mean-bar {
+        margin-top: 0;
+    }
+    .mean-last {
+        display: none;
+    }
+    .head-top {
+        display: none;
+    }
+    .full-slider_cont h1 {
+        font-size: 32px;
+        line-height: 46px;
+    }
+    .main_bt {
+        padding: 5px 24px 5px 24px;
+        margin-right: 10px;
+    }
+    .about .titlepage h2 {
+        font-size: 26px;
+        width: 274px;
+    }
+    .download .titlepage h2 {
+        font-size: 21px;
+        line-height: 13px;
+    }
+    .read-more {
+        margin-top: 30px;
+    }
+    .width {
+        width: 100%;
+    }
+    .read-more a {
+        width: 192px;
+        padding: 12px 0px;
+        font-size: 16px;
+    }
+    .testimonial .contact {
+        margin-top: 30px;
+    }
+    .address {
+        margin-bottom: 30px;
+    }
+    .copyright p {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    .footer .newsletter .subscribe {
+        width: 120px;
+        padding: 21px 0;
+    }
+    ul.contant_icon {
         margin-bottom: 20px;
-    }
-     .pricing_box_cross {
-        padding-bottom: 75px;
-         padding-bottom: 75px;
-    }
-     .pricing_box_cross::after {
-         width: 90%;
-         height: 70px;
-         left: 16px;
-         bottom: -3px;
-    }
-     .slider_section {
-        padding-top: 159px;
-    }
-     .Newsletter .news h2 {
-        font-size: 31px;
-         line-height: 44px;
-    }
-     .yoga .title h2 {
-        font-size: 44px;
-         line-height: 47px;
-    }
-     .yoga .yoga_box img {
-        margin-top: -32px;
-         padding-bottom: 32px !important;
-         padding: 0px 19px;
-    }
-     ul.mail-icon li {
-        font-size: 13px;
-         padding-bottom: 20px;
-    }
-    .contact .title h2 {font-size: 55px;}
-     .main_form {
-         padding: 62px 18px;
-         margin-right: 0px;
-    }
-   
-     ul.social_icon {
-         display: none 
-    }
-     .copyright p {
-         font-size: 22px;
-    }
-     ul.social_top_icon li {
-         padding-right: 2px;
     }
 }

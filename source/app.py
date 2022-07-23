@@ -1,10 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,redirect,url_for
 import numpy as np
 import pickle
 
@@ -14,15 +10,27 @@ model = pickle.load(open('Stroke.pkl', 'rb'))
 
 @app.route('/',methods=['GET'])
 def Home():
-    return render_template('output.html')
+    return render_template('Home.html')
 
 @app.route('/stroke',methods=['GET'])
 def Stroke():
-    return render_template('index.html')
+    return render_template('stroke.html')
 
 @app.route('/explore',methods=['GET'])
 def explore():
     return render_template('explore.html')
+    
+@app.route('/result',methods=['GET'])
+def result():
+    return render_template('result.html')
+
+@app.route('/result1',methods=['GET'])
+def result1():
+    return render_template('result1.html')
+
+@app.route('/yoga',methods=['GET'])
+def yoga():
+    return render_template('yoga.html')
 
 @app.route("/predict", methods=['POST'])
 def predict():
@@ -33,8 +41,6 @@ def predict():
         heart_disease = int(request.form['heart_disease'])
         ever_married = int(request.form['ever_married'])
         Residence_type = int(request.form['Residence_type'])
-        avg_glucose_level = float(request.form['avg_glucose_level'])
-        bmi = float(request.form['bmi'])
 
 
         work_type = request.form['work_type']
@@ -101,14 +107,53 @@ def predict():
             smoking_status_Smokes = 0
             smoking_status_Unknown = 1
 
+        
+
+        glucose = request.form['avg_glucose_level']
+
+        if glucose == 'gNormal':
+            gNormal = 1
+            gModerate = 0
+            gHigh = 0
+
+        if glucose == 'gModerate':
+            gNormal = 0
+            gModerate = 1
+            gHigh = 0
+
+        elif glucose == "gHigh":
+            gNormal = 0
+            gModerate = 0
+            gHigh = 1
+
+        bmi = request.form['bmi']
+
+        if bmi == 'bNormal':
+            bNormal = 1
+            bModerate = 0
+            bHigh = 0
+
+        if bmi == 'bModerate':
+            bNormal = 0
+            bModerate = 1
+            bHigh = 0
+
+        elif bmi == "bHigh":
+            bNormal = 0
+            bModerate = 0
+            bHigh = 1
 
         values = np.array([[age, hypertension, heart_disease, ever_married,
-                            Residence_type, avg_glucose_level, bmi,
+                            Residence_type,
                             work_type_Never_worked, work_type_Private,work_type_Self_employed, work_type_children,
-                            smoking_status_formerly_smoked, smoking_status_never_smoked, smoking_status_Smokes]])
+                            smoking_status_formerly_smoked, smoking_status_never_smoked, smoking_status_Smokes,gNormal,gModerate,gHigh,bNormal,bModerate,bHigh]])
         prediction = model.predict(values)
 
-        return render_template('result.html', prediction=prediction)
+        if prediction==1:
+            return redirect(url_for('result1'))
+        elif prediction==0:
+            return redirect(url_for('result'))
+    return render_template('result.html', prediction=prediction)
 
 if __name__=='__main__':
     app.run(debug=True,use_reloader=False)
